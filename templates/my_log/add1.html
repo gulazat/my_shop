@@ -1,0 +1,16 @@
+
+
+
+<div class="a1-ad">
+    <div class="ads">
+       <div style="padding-top: 70px; margin-left: 40px;">
+           {% for ad in add_list %}
+                {% if ad.location == 'a1' %}
+
+                    <a target="_blank" href="{{ ad.callback.url }}"><img src="{{ ad.img.url }}" alt="广告图片" width="100%" class="ad1_img" ></a>
+                {% endif %}
+           {% endfor %}
+       </div>
+
+    </div>
+</div>

@@ -1,0 +1,52 @@
+{% extends 'base/base.html' %}
+
+{% block title %}删除{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div style="height: 100px;"></div>
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h1>你确定要删除这个订单吗？</h1>
+
+                    <table class="table">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Customer</th>
+                                <th scope="col">Product</th>
+                                <th scope="col">Status</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+
+                                <td>{{ order.customer }}</td>
+                                <td>{{ order.product }}</td>
+                                <td>{{ order.status }}</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+
+
+
+                    <form action="{% url 'my_log:deleteorder' order.id %}" method="post">
+                        {% csrf_token %}
+                        <a href="{% url 'my_log:index' %}" class="btn btn-warning">取消</a>
+                        <button type="submit" class="btn btn-danger">确定</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

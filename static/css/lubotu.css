@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+.main {
+    width: 450px;
+    height: 600px;
+    margin-left: 15px;
+    margin-top: 30px;
+    background-color: green;
+}
+.focus {
+    position: relative;
+    width: 450px;
+    height: 600px;
+
+    background-color: purple;
+    overflow: hidden;
+}
+.focus ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600%;
+}
+.focus ul li {
+    float:left;
+}
+
+.arrow-l,
+.arrow-r {
+    display: none;
+    position: absolute;
+
+    top: 50%;
+    margin-top: -30px;
+    width: 20px;
+    height: 30px;
+    background: rgba(75, 55, 55, 0.7);
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    text-decoration: none;
+    z-index: 2;
+
+
+}
+
+.arrow-l {
+    left: 0;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+
+.arrow-r {
+    right: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.circle {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    margin-left: -25px;
+    width: 170px;
+    height: 15px;
+    /* background:rgba(255, 255, 255, .3); */
+    border-radius: 7px;
+
+}
+
+
+.circle li {
+    float: left;
+
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border:2px solid rgba(255, 255, 255, .3);
+    border-radius: 50%;
+    margin: 3px;
+    cursor: pointer;
+
+
+}
+
+li.current {
+    background-color: aqua;
+}

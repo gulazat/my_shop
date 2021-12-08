@@ -1,0 +1,88 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row" >
+        <div class="col-md-6" style="padding-top: 150px;">
+
+            <div class="card shadow">
+<!--                <div class="card-header">-->
+<!--                    <h4>注册</h4>-->
+<!--                </div>-->
+                <div class="card-body">
+
+                    <form class="" novalidate method="post" action="{% url 'users:signup' %}" enctype="multipart/form-data" >
+                        {% csrf_token %}
+
+<!--                        <div class="form-group">-->
+
+                            <div class="form-control">
+                                <i class="glyphicon glyphicon-user"></i>
+                                    {{form.username}}
+                            </div>
+
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+                            <div class="form-control">
+                                <i class="glyphicon glyphicon-envelope"></i>
+                                {{form.email}}
+                            </div>
+<!--                        </div>-->
+
+<!--                        <div class="form-group">-->
+                            <div class="form-control">
+                                <i class="glyphicon glyphicon-phone-alt"></i>
+                                {{form.mobile}}
+                             </div>
+<!--                        </div>-->
+
+
+<!--                <div class="form-group">-->
+                    <div class="form-control">
+                        <i class="glyphicon glyphicon-lock"></i>
+                        {{form.password1}}
+                    </div>
+<!--                </div>-->
+<!--                <div class="form-group">-->
+                    <div class="form-control">
+                        <i class="glyphicon glyphicon-paperclip"></i>
+                        {{form.password2}}
+                    </div>
+<!--                </div>-->
+                <button class="btn btn-primary" type="submit">注册</button>
+
+                <div class="error_worn">
+
+                    {% if form.errors %}
+                    <div class="ui info message">
+                        <ul class="list">
+
+                            {% for field in form %}
+                            {% for error in field.errors %}
+                            <li class="item">{{ error|escape }}</li>
+                            {% endfor %}
+                            {% endfor %}
+                            {% for error in form.non_field_errors %}
+                            <li class="item">{{ error|escape }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    {% endif %}
+
+                </div>
+
+        </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+{% endblock  %}
